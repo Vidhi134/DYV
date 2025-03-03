@@ -1,0 +1,83 @@
+﻿@model CheckoutViewModel
+
+@{
+    ViewData["Title"] = "Checkout";
+}
+
+<div class="container mt-5">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+            <li class="breadcrumb-item"><a asp-controller="Cart" asp-action="AddToCart">Cart</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+        </ol>
+    </nav>
+
+    <h2 class="mb-4">Checkout</h2>
+
+    <div class="row">
+        <!-- Billing Details -->
+        <div class="col-md-7">
+            <h4>Billing Details</h4>
+            <form method="post" asp-action="PlaceOrder">
+                <div class="mb-3">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-control" asp-for="FullName" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" asp-for="Email" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Address</label>
+                    <input type="text" class="form-control" asp-for="Address" required>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">City</label>
+                        <input type="text" class="form-control" asp-for="City" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">ZIP Code</label>
+                        <input type="text" class="form-control" asp-for="ZipCode" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Country</label>
+                    <select class="form-select" asp-for="Country">
+                        <option value="USA">USA</option>
+                        <option value="UK">UK</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Australia">Australia</option>
+                    </select>
+                </div>
+
+                <!-- Payment Method -->
+                <h5>Payment Method</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" asp-for="PaymentMethod" value="Credit Card" checked>
+                    <label class="form-check-label">Credit Card</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" asp-for="PaymentMethod" value="PayPal">
+                    <label class="form-check-label">PayPal</label>
+                </div>
+                <div class="form-check mb-4">
+                    <input class="form-check-input" type="radio" asp-for="PaymentMethod" value="Cash on Delivery">
+                    <label class="form-check-label">Cash on Delivery</label>
+                </div>
+            </form>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="col-md-5">
+            <div class="border p-3 bg-light">
+                <h4>Order Summary</h4>
+                <p><strong>Subtotal:</strong> $@Model.CartTotal</p>
+                <p><strong>Shipping:</strong> Free</p>
+                <h5><strong>Total:</strong> $@Model.CartTotal</h5>
+                <button type="submit" class="btn btn-danger w-100">Place Order</button>
+            </div>
+        </div>
+    </div>
+</div>

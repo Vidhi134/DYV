@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Contact Us";
+}
+
+<div class="container mt-5">
+    <h2 class="fw-bold text-center">Contact Us</h2>
+
+    <div class="row mt-4">
+        <!-- Left Section - Contact Details -->
+        <div class="col-md-4">
+            <div class="p-4 border rounded shadow-sm bg-white">
+                <h5><i class="fas fa-phone-alt text-danger"></i> Call To Us</h5>
+                <p>We are available 24/7, 7 days a week.</p>
+                <p><strong>Phone:</strong> +88061112222</p>
+                <hr>
+                <h5><i class="fas fa-envelope text-danger"></i> Write To Us</h5>
+                <p>Fill out our form and we will contact you within 24 hours.</p>
+                <p><strong>Email:</strong> customer@exclusive.com</p>
+                <p><strong>Email:</strong> support@exclusive.com</p>
+            </div>
+        </div>
+
+        <!-- Right Section - Contact Form -->
+        <div class="col-md-8">
+            <div class="p-4 border rounded shadow-sm bg-white">
+                <form>
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" placeholder="Your Name *" required>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="email" class="form-control" placeholder="Your Email *" required>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" placeholder="Your Phone *" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-danger w-100">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
