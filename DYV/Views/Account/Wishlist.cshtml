@@ -1,0 +1,105 @@
+﻿@{
+    ViewData["Title"] = "Wishlist";
+}
+
+<div class="container my-5">
+    <h2 class="fw-bold">My Wishlist</h2>
+
+    <!-- Category Tabs -->
+    <div class="mb-4">
+        <button class="btn btn-outline-dark me-2" onclick="filterCategory('stationary')">Stationery</button>
+        <button class="btn btn-outline-dark me-2" onclick="filterCategory('gaming')">Gaming</button>
+        <button class="btn btn-outline-dark" onclick="filterCategory('clothing')">Clothing</button>
+    </div>
+
+    <!-- Wishlist Items Grid -->
+    <div class="row" id="wishlistItems">
+        <!-- Stationery Items -->
+        <div class="col-md-3 wishlist-item stationary">
+            <div class="card">
+                <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="Notebook">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Notebook</h5>
+                    <p class="text-danger">$5</p>
+                    <button class="btn btn-dark">Add To Cart</button>
+                    <button class="btn btn-outline-danger">Remove</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 wishlist-item stationary">
+            <div class="card">
+                <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="Pen Set">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Pen Set</h5>
+                    <p class="text-danger">$10</p>
+                    <button class="btn btn-dark">Add To Cart</button>
+                    <button class="btn btn-outline-danger">Remove</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gaming Items -->
+        <div class="col-md-3 wishlist-item gaming">
+            <div class="card">
+                <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="Gaming Mouse">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Gaming Mouse</h5>
+                    <p class="text-danger">$40</p>
+                    <button class="btn btn-dark">Add To Cart</button>
+                    <button class="btn btn-outline-danger">Remove</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 wishlist-item gaming">
+            <div class="card">
+                <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="RGB Keyboard">
+                <div class="card-body text-center">
+                    <h5 class="card-title">RGB Keyboard</h5>
+                    <p class="text-danger">$80</p>
+                    <button class="btn btn-dark">Add To Cart</button>
+                    <button class="btn btn-outline-danger">Remove</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Clothing Items -->
+        <div class="col-md-3 wishlist-item clothing">
+            <div class="card">
+                <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="Jacket">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Jacket</h5>
+                    <p class="text-danger">$120</p>
+                    <button class="btn btn-dark">Add To Cart</button>
+                    <button class="btn btn-outline-danger">Remove</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 wishlist-item clothing">
+            <div class="card">
+                <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="T-Shirt">
+                <div class="card-body text-center">
+                    <h5 class="card-title">T-Shirt</h5>
+                    <p class="text-danger">$30</p>
+                    <button class="btn btn-dark">Add To Cart</button>
+                    <button class="btn btn-outline-danger">Remove</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for Filtering -->
+<script>
+    function filterCategory(category) {
+        document.querySelectorAll('.wishlist-item').forEach(item => {
+            if (item.classList.contains(category)) {
+                item.style.display = "block";
+            } else {
+                item.style.display = "none";
+            }
+        });
+    }
+</script>

@@ -15,43 +15,86 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand fw-bold" asp-controller="Home" asp-action="Index">Exclusive</a>
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
+                <div class="dropdown">
+                    <button class="btn btn-light dropdown-toggle fw-bold" type="button" id="seasonalDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                        Seasonal Store
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="seasonalDropdown">
+                        <li><a class="dropdown-item" asp-controller="Store" asp-action="WinterCollection">Winter Collection</a></li>
+                        <li><a class="dropdown-item" asp-controller="Store" asp-action="SummerCollection">Summer Collection</a></li>
+                        <li><a class="dropdown-item" asp-controller="Store" asp-action="RainyCollection">Rainy Collection</a></li>
+                        <li><a class="dropdown-item" asp-controller="Store" asp-action="StationeryItems">Stationery Items</a></li>
+                    </ul>
+                </div>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="Contact">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="About">About</a>
-                        </li>
+                    <ul class="navbar-nav mx-auto align-items-center">
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="About">About</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Store" asp-action="Exclusive">Exclusive</a></li>
                     </ul>
-
-                    <!-- Right Side - Login, Cart, Profile -->
-                    <ul class="navbar-nav">
-                        <ul class="navbar-nav mx-auto">
-                            <li class="nav-item">
-                                <a class="nav-link active" asp-controller="Account" asp-action="Login">Login</a>
-                            <li class="nav-item"><a class="nav-link active" asp-controller="Cart" asp-action="AddToCart">Cart</a></li>
-
-                           
-            
-                            <li class="nav-item"><a class="nav-link active" asp-controller="Profile" asp-action="Index">My Profile</a></li>
-
-                        </ul>
-                    </ul>
+                    <div class="navbar-icons">
+                        <a asp-controller="Cart" asp-action="AddToCart">🛒 Cart</a>
+                        <a asp-controller="Account" asp-action="Wishlist"> ♥ Wishlist</a>
+                        <a asp-controller="Profile" asp-action="Index">
+                            <img src="~/imgs/profile-logo.png" alt="Profile" class="profile-icon">
+                        </a>
+                    </div>
                 </div>
             </div>
         </nav>
+
+        <!-- Navbar Styling -->
+        <style>
+            .navbar {
+                background-color: #ffffff;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .navbar-nav {
+                margin: auto;
+            }
+
+            .nav-link {
+                font-weight: bold;
+                color: #333;
+                transition: 0.3s;
+            }
+
+                .nav-link:hover {
+                    color: #6e8efb;
+                }
+
+            .navbar-icons {
+                display: flex;
+                align-items: center;
+            }
+
+                .navbar-icons a {
+                    margin-left: 15px;
+                    text-decoration: none;
+                    font-weight: bold;
+                    color: #333;
+                    transition: 0.3s;
+                }
+
+                    .navbar-icons a:hover {
+                        color: #6e8efb;
+                    }
+
+            .profile-icon {
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-left: 15px;
+                cursor: pointer;
+            }
+        </style>
 
                     </ul>
                 </div>
@@ -66,11 +109,15 @@
     
 
 
-    <footer class="border-top footer text-muted">
+    <body>
         <div class="container">
-            &copy; 2025 - DYV - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            @RenderBody()
         </div>
-    </footer>
+
+        <!-- Include Footer -->
+        @await Html.PartialAsync("_Footer")
+
+    </body>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
