@@ -37,6 +37,10 @@ namespace DYV.Controllers
         {
             return View();
         }
+        public IActionResult Exclusive()
+        {
+            return View();
+        }
 
     }
 }

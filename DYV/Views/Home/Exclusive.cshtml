@@ -1,0 +1,67 @@
+﻿
+
+@{
+    ViewData["Title"] = "Exclusive Experience";
+}
+
+<section class="exclusive-section">
+    <h2>Exclusive Experience</h2>
+    <p>Unlock exclusive features and premium services with our membership plans.</p>
+</section>
+
+<section class="premium-services">
+    <h3>Premium Services</h3>
+    <ul>
+        <li>Priority Customer Support</li>
+        <li>Exclusive Discounts</li>
+        <li>Early Access to New Products</li>
+    </ul>
+</section>
+
+<!-- FAQ Modal -->
+<div id="faqModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('faqModal')">&times;</span>
+        <h2>Frequently Asked Questions</h2>
+        <p>Here you can find answers to common questions.</p>
+    </div>
+</div>
+
+<!-- Shipping Details Modal -->
+<div id="shippingModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('shippingModal')">&times;</span>
+        <h2>Shipping Details</h2>
+        <p>Information about shipping policies and delivery timelines.</p>
+    </div>
+</div>
+
+<!-- Privacy Policy Modal -->
+<div id="privacyModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('privacyModal')">&times;</span>
+        <h2>Privacy Policy</h2>
+        <p>Learn how we protect your data and privacy.</p>
+    </div>
+</div>
+
+<!-- Terms & Conditions Modal -->
+<div id="termsModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('termsModal')">&times;</span>
+        <h2>Terms & Conditions</h2>
+        <p>Understand our terms and conditions before using our services.</p>
+    </div>
+</div>
+
+<script>
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+    }
+</script>
+
+@section Scripts {
+    <script>
+        // Add any additional JavaScript here
+    </script>
+}
