@@ -1,43 +1,35 @@
-﻿using DYV.Models;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DYV.Controllers
+public class AccountController : Controller
 {
-    public class AccountController : Controller
+    [AllowAnonymous]  // Anyone can access Login page
+    public IActionResult Login()
     {
-        private static List<User> users = new List<User>(); // Temporary storage (replace with DB later)
+        return View();
+    }
 
-        // Display the Sign-Up Form
-        public IActionResult SignUp()
-        {
-            return View();
-        }
-
-        // Handle the Sign-Up Form Submission
-        [HttpPost]
-        public IActionResult SignUp(User model)
-        {
-            if (ModelState.IsValid)
-            {
-                users.Add(model); // Add user to list (replace with DB logic)
-                return RedirectToAction("Login"); // Redirect to Login Page
-            }
-            return View(model);
-        }
-
-        // Login Page
-        public IActionResult Login()
-        {
-            return View();
-        }
-        [HttpGet]
+    [AllowAnonymous]  // Anyone can access Register page
+    public IActionResult SignUp()
+    {
+        return View();
+    }
+    
+        [HttpGet] // Ensure this is a GET request
         public IActionResult ForgotPassword()
         {
             return View();
         }
-        public IActionResult Wishlist()
-        {
-            return View();
-        }
+    
+
+
+    [Authorize]  // Requires login
+    public IActionResult Profile()
+    {
+        return View();
+    }
+    public IActionResult Wishlist()
+    {
+        return View();
     }
 }

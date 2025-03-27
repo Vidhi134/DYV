@@ -14,7 +14,7 @@
                     <li><a asp-controller="Home" asp-action="Index" class="footer-link">Home</a></li>
                     <li><a asp-controller="Home" asp-action="About" class="footer-link">About Us</a></li>
                     <li><a asp-controller="Home" asp-action="Contact" class="footer-link">Contact</a></li>
-                    <li><a asp-controller="Store" asp-action="Exclusive" class="footer-link">Exclusive Deals</a></li>
+                    <li><a asp-controller="Home" asp-action="Exclusive" class="footer-link">Exclusive Deals</a></li>
                 </ul>
             </div>
 
@@ -22,10 +22,10 @@
             <div class="col-md-3">
                 <h5 class="fw-bold">Customer Support</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#faqModal" class="footer-link">FAQs</a></li>
-                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#shippingModal" class="footer-link">Shipping & Returns</a></li>
-                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal" class="footer-link">Privacy Policy</a></li>
-                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#termsModal" class="footer-link">Terms & Conditions</a></li>
+                    <li><a asp-controller="Support" asp-action="FAQs" class="footer-link">FAQs</a></li>
+                    <li><a asp-controller="Support" asp-action="ShippingAndReturn" class="footer-link">Shipping & Returns</a></li>
+                    <li><a asp-controller="Home" asp-action="Privacy" class="footer-link">Privacy Policy</a></li>
+                    <li><a asp-controller="Support" asp-action="TermsAndCondition" class="footer-link">Terms & Conditions</a></li>
                 </ul>
             </div>
 
@@ -48,10 +48,10 @@
         <div class="text-center">
             <h6 class="fw-bold">Follow Us</h6>
             <div class="social-icons">
-                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fa-brands fa-youtube"></i></a>
             </div>
         </div>
 
@@ -61,11 +61,15 @@
     </div>
 </footer>
 
+<!-- Include FontAwesome for Social Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 <!-- Custom Styles -->
 <style>
     /* Footer Background */
     .footer {
         background: linear-gradient(black, #000000d1);
+        padding-bottom: 20px;
     }
 
     /* Text Styling */
@@ -83,10 +87,10 @@
         margin-bottom: 5px;
     }
 
-    .footer-link:hover {
-        color: #f8d210;
-        transform: translateX(5px);
-    }
+        .footer-link:hover {
+            color: #f8d210;
+            transform: translateX(5px);
+        }
 
     /* Newsletter Input */
     .footer-input {
@@ -101,10 +105,10 @@
         transition: 0.3s;
     }
 
-    .footer-btn:hover {
-        background: #f8d210;
-        color: #333;
-    }
+        .footer-btn:hover {
+            background: #f8d210;
+            color: #333;
+        }
 
     /* Social Media Icons */
     .social-icons {
@@ -112,21 +116,23 @@
     }
 
     .social-link {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         width: 40px;
         height: 40px;
         background: rgba(255, 255, 255, 0.2);
         text-align: center;
-        line-height: 40px;
         border-radius: 50%;
         font-size: 18px;
         margin: 5px;
         transition: 0.3s;
         color: white;
+        text-decoration: none;
     }
 
-    .social-link:hover {
-        background: #f8d210;
-        color: #333;
-    }
+        .social-link:hover {
+            background: #f8d210;
+            color: #333;
+        }
 </style>

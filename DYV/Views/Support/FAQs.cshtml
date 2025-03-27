@@ -1,0 +1,118 @@
+﻿@{
+    ViewData["Title"] = "FAQs - Online Seasonal Store";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center fw-bold mb-4">Frequently Asked Questions</h2>
+
+    <div class="accordion" id="faqsAccordion">
+        <!-- General Questions -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="generalHeading">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#generalCollapse">
+                    General Questions
+                </button>
+            </h2>
+            <div id="generalCollapse" class="accordion-collapse collapse show" data-bs-parent="#faqsAccordion">
+                <div class="accordion-body">
+                    <strong>Q1: What is Seasonal Store?</strong>
+                    <p>Seasonal Store is your go-to shop for all seasonal products, including decor, gifts, and exclusive deals.</p>
+
+                    <strong>Q2: Do I need an account to place an order?</strong>
+                    <p>No, you can place an order as a guest, but creating an account allows you to track your orders and receive exclusive offers.</p>
+
+                    <strong>Q3: How can I contact customer support?</strong>
+                    <p>You can reach out to our support team via our <a asp-controller="Home" asp-action="Contact">Contact Us</a> page.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Orders & Shipping -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="ordersHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ordersCollapse">
+                    Orders & Shipping
+                </button>
+            </h2>
+            <div id="ordersCollapse" class="accordion-collapse collapse" data-bs-parent="#faqsAccordion">
+                <div class="accordion-body">
+                    <strong>Q4: How do I track my order?</strong>
+                    <p>Once your order is shipped, you will receive a tracking link via email. You can also check your order status in the <a asp-controller="Account" asp-action="Orders">My Orders</a> section.</p>
+
+                    <strong>Q5: What are your shipping options?</strong>
+                    <p>We offer Standard (5-7 days), Express (2-3 days), and Same-Day delivery in select areas.</p>
+
+                    <strong>Q6: Can I change or cancel my order after placing it?</strong>
+                    <p>Orders can only be modified or canceled within 12 hours of placing them. Contact our support team immediately.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Returns & Refunds -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="returnsHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#returnsCollapse">
+                    Returns & Refunds
+                </button>
+            </h2>
+            <div id="returnsCollapse" class="accordion-collapse collapse" data-bs-parent="#faqsAccordion">
+                <div class="accordion-body">
+                    <strong>Q7: What is your return policy?</strong>
+                    <p>We accept returns within 14 days of delivery. Items must be in original condition with packaging intact.</p>
+
+                    <strong>Q8: How do I initiate a return?</strong>
+                    <p>Visit our <a asp-controller="Support" asp-action="ShippingReturns">Shipping & Returns</a> page for instructions.</p>
+
+                    <strong>Q9: When will I receive my refund?</strong>
+                    <p>Refunds are processed within 5-7 business days after the returned item is received.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payments -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="paymentsHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#paymentsCollapse">
+                    Payments
+                </button>
+            </h2>
+            <div id="paymentsCollapse" class="accordion-collapse collapse" data-bs-parent="#faqsAccordion">
+                <div class="accordion-body">
+                    <strong>Q10: What payment methods do you accept?</strong>
+                    <p>We accept credit/debit cards, PayPal, Google Pay, Apple Pay, and Cash on Delivery (COD) in select locations.</p>
+
+                    <strong>Q11: Is my payment information secure?</strong>
+                    <p>Yes, we use SSL encryption to ensure your data is protected. Payments are processed through trusted gateways.</p>
+
+                    <strong>Q12: Can I pay in installments?</strong>
+                    <p>We offer installment payment options through select providers. Check during checkout for availability.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Custom Styles -->
+<style>
+    .accordion-button {
+        font-weight: bold;
+        background-color: #f8f9fa;
+    }
+
+    .accordion-button:hover {
+        background-color: #e0e0e0;
+    }
+
+    .accordion-body p {
+        margin-bottom: 10px;
+    }
+
+    a {
+        color: #d9534f;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
