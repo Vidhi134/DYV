@@ -18,6 +18,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     {
         options.LoginPath = "/Account/Login";  // Redirect to Login page if not authenticated
         options.AccessDeniedPath = "/Account/AccessDenied"; // Optional: Access denied page
+    
     });
 
 var app = builder.Build();
@@ -57,5 +58,6 @@ app.UseEndpoints(endpoints =>
         name: "default",
         pattern: "{controller=Home}/{action=Index}/{id?}");
 });
+
 
 app.Run();
